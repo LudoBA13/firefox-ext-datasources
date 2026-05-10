@@ -4,7 +4,10 @@
 	"version": "0.1.0",
 	"description": "Gather and sync data from sources to Google Sheets.",
 	"permissions": [
-		"storage"
+		"storage",
+		"downloads",
+		"identity",
+		"notifications"
 	],
 	"background": {
 		"scripts": [
