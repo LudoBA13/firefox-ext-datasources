@@ -13,3 +13,10 @@ This browser extension gathers data from various sources (CSV/Excel) and synchro
 - **Styling:** Allman style, tabs for indentation.
 - **Quotes:** Single quotes for string literals (no escape sequences).
 - **Declaration:** `const` or `let`.
+
+## Operational Guidelines
+- **Communication:** Terse, focused on technical aspects.
+- **Workflow:** Establish a solid foundation before implementation. Do not rush the user. Avoid excessive follow-ups.
+- **Standards:** All code, symbols, and comments must be in English. The user interface must be in French.
+- **Principles:** Focus on simplicity, readability, and robustness. Use separation of concerns. Avoid deep nesting. Prefer early returns.
+
