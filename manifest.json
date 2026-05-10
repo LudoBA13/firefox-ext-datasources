@@ -1,0 +1,14 @@
+{
+	"manifest_version": 3,
+	"name": "Firefox Ext Data Sources",
+	"version": "0.1.0",
+	"description": "Gather and sync data from sources to Google Sheets.",
+	"permissions": [
+		"storage"
+	],
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	}
+}
