@@ -19,21 +19,10 @@ const SOURCES = [
 	}
 ];
 
-const notifiedDownloads = new Set();
-
 browser.downloads.onChanged.addListener((delta) =>
 {
 	if (delta.state && delta.state.current === 'complete')
 	{
-		if (notifiedDownloads.has(delta.id))
-		{
-			return;
-		}
-		
-		notifiedDownloads.add(delta.id);
-		// Clean up after 30 seconds to allow for future downloads of the same ID
-		setTimeout(() => notifiedDownloads.delete(delta.id), 30000);
-
 		browser.downloads.search({ id: delta.id }).then((items) =>
 		{
 			if (items.length > 0)
@@ -53,11 +42,14 @@ function activateIndicator(item, source)
 {
 	const popupUrl = `import.html?id=${item.id}&accept=${encodeURIComponent(source.accept)}`;
 	const action = browser.action || browser.browserAction;
-	
-	if (!action) return;
+
+	if (!action)
+	{
+		return;
+	}
 
 	action.setPopup({ popup: popupUrl });
-	
+
 	// Blinking effect: Toggle badge for 10 seconds
 	let count = 0;
 	const interval = setInterval(() => {
@@ -89,7 +81,7 @@ function getMatch(item)
 		const urlMatch = item.url.match(source.pattern);
 		// On some systems filename is an absolute path
 		const fileMatch = item.filename.match(source.pattern);
-		
+
 		const result = urlMatch || fileMatch;
 
 		if (result)

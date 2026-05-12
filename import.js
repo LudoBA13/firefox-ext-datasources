@@ -62,8 +62,8 @@ fileInput.addEventListener('change', (e) =>
 
 	status.textContent = 'Lecture du fichier...';
 	status.style.color = 'black';
-	
-	const reader = new FileReader();
+
+	const reader = new FileReader;
 	reader.onload = (event) =>
 	{
 		const content = event.target.result;
@@ -71,7 +71,7 @@ fileInput.addEventListener('change', (e) =>
 		status.textContent = 'Données prêtes pour la synchronisation !';
 		status.style.color = 'green';
 	};
-	
+
 	reader.onerror = () =>
 	{
 		status.textContent = 'Erreur lors de la lecture du fichier.';
