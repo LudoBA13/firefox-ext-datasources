@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Importation de données</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 10px;
+			text-align: center;
+			background: #fdfdfd;
+		}
+		.container {
+			width: 100%;
+			box-sizing: border-box;
+			border: 1px solid #eee;
+			padding: 15px;
+			border-radius: 8px;
+			background: white;
+		}
+		button {
+			padding: 12px;
+			width: 100%;
+			font-size: 14px;
+			cursor: pointer;
+			background: #0060df;
+			color: white;
+			border: none;
+			border-radius: 4px;
+		}
+		button:hover {
+			background: #003eaa;
+		}
+		#status {
+			margin-top: 20px;
+			font-weight: bold;
+			font-size: 13px;
+		}
+		#downloadInfo, #pickedFileInfo {
+			word-break: break-all;
+			margin-bottom: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Synchronisation</h1>
+		
+		<div id="downloadInfo" style="text-align: left; background: #f9f9f9; padding: 10px; margin-bottom: 20px; font-size: 12px; border: 1px dashed #ccc;">
+			<strong>Fichier attendu :</strong><br>
+			ID: <span id="infoId">-</span><br>
+			Nom: <span id="infoName">-</span><br>
+			URL: <span id="infoUrl">-</span>
+		</div>
+
+		<p>Veuillez sélectionner le fichier que vous venez de télécharger pour continuer.</p>
+		<input type="file" id="fileInput" style="display: none;">
+		<button id="pickButton">Choisir le fichier</button>
+		
+		<div id="pickedFileInfo" style="display: none; text-align: left; background: #eef9ee; padding: 10px; margin-top: 20px; font-size: 12px; border: 1px solid #99cc99;">
+			<strong>Fichier sélectionné :</strong><br>
+			Nom: <span id="pickedName"></span><br>
+			Taille: <span id="pickedSize"></span> octets<br>
+			Type: <span id="pickedType"></span>
+		</div>
+
+		<div id="status"></div>
+	</div>
+	<script src="import.js"></script>
+</body>
+</html>

@@ -9,6 +9,16 @@
 		"identity",
 		"notifications"
 	],
+	"action": {
+		"default_title": "Importation de données",
+		"default_popup": "import.html",
+		"default_area": "navbar"
+	},
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "datasources@ludo-ba13"
+		}
+	},
 	"background": {
 		"scripts": [
 			"background.js"
